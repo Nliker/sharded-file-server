@@ -38,3 +38,41 @@
 - 파일을 다시 조립할 때 조각 단위로 검증이 가능하며,  
   손상된 조각을 빠르게 식별할 수 있다.
 - 필요 시 손상된 조각만을 선택적으로 복구할 수 있도록 설계되었다.
+
+## 기술 스택 (Technology Stack)
+
+- **Backend Framework**
+  - FastAPI
+  - Uvicorn
+
+- **Cryptography & Identifier Libraries**
+  - cryptography
+  - hashlib
+  - uuid
+
+## 암호화 알고리즘 (Cryptographic Algorithms)
+
+- **Unique Identifier**
+  - UUIDv4
+
+- **Hash Algorithm**
+  - SHA-256
+
+- **Symmetric Encryption**
+  - AES-256-GCM
+
+- **Key Derivation**
+  - PBKDF2-HMAC-SHA256
+
+- **Integrity Verification**
+  - Merkle Tree (SHA-256)
+
+## 사용자 사용 흐름 (User Flow)
+
+- **Upload Flow**
+![upload-flow](https://private-user-images.githubusercontent.com/77044696/545517500-04279899-b07e-4478-b8d9-9008b4451864.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzAyODcxMTgsIm5iZiI6MTc3MDI4NjgxOCwicGF0aCI6Ii83NzA0NDY5Ni81NDU1MTc1MDAtMDQyNzk4OTktYjA3ZS00NDc4LWI4ZDktOTAwOGI0NDUxODY0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMjA1VDEwMjAxOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTRlYTFmNWJmNzQ5MjRjY2NhMGViOGIzNGI4Yzg4OGE4YzEzMGE2ZTMzYWI4YmFlNWUxZDVlMTU2MjA3YjgxNWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XWZp230XxWaihv_3Wxmn9yfo3IoomGIyO2xLyMnLhDU)
+
+---
+
+- **Download Flow**
+![download-flow](https://private-user-images.githubusercontent.com/77044696/545515122-a74b77db-d958-45ab-a35b-05f47749d12d.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzAyODY4ODQsIm5iZiI6MTc3MDI4NjU4NCwicGF0aCI6Ii83NzA0NDY5Ni81NDU1MTUxMjItYTc0Yjc3ZGItZDk1OC00NWFiLWEzNWItMDVmNDc3NDlkMTJkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMjA1VDEwMTYyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE5OWU2MDhkNmY3NmM3YTVmNGQzMGVhNzY5MWRjYWE3NjY3YjljNTg0MDFjZDNlODZlNWYxMDVkYmY3YjM3MDkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.FDa0xF7227jigcAr1K8KGhfQ-hhQx3XIgYfSafXBcTY)
