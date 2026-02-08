@@ -1,2 +1,37 @@
-out
-dist
+# ===== Python cache =====
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===== Virtual environments =====
+.venv/
+venv/
+env/
+ENV/
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Test / coverage =====
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ===== Build / distribution =====
+build/
+dist/
+out/
+*.egg-info/
+
+# ===== Logs =====
+*.log
+
+# ===== Local storage (your shard storage) =====
+storage/
