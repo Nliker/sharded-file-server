@@ -1,18 +1,21 @@
-# domain/upload/crypto.py
-import hashlib
-import os
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+import hashlib
+import os
+from dotenv import load_dotenv
 
+ENV = os.getenv("ENV", "development")
 
-KEY_LEN = 32
-SEED_LEN = 32
-ITERATIONS = 200_000
+load_dotenv(f".env.{ENV}")
 
 
 def derive_key_and_seed(password: str, unique_id: str) -> tuple[bytes, bytes]:
     salt = hashlib.sha256(f"salt:{unique_id}".encode()).digest()
+
+    KEY_LEN = int(os.getenv("KEY_LEN"))
+    SEED_LEN = int(os.getenv("SEED_LEN"))
+    ITERATIONS = int(os.getenv("ITERATIONS"))
 
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
@@ -23,8 +26,8 @@ def derive_key_and_seed(password: str, unique_id: str) -> tuple[bytes, bytes]:
 
     derived = kdf.derive(f"{password}:{unique_id}".encode())
 
-    enc_key = derived[:KEY_LEN]
-    seed = derived[KEY_LEN:]
+    enc_key = derived[KEY_LEN:]
+    seed = derived[:KEY_LEN]
 
     return enc_key, seed
 

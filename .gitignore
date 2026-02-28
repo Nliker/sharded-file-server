@@ -35,3 +35,6 @@ out/
 
 # ===== Local storage (your shard storage) =====
 storage/
+
+# ===== metadata =====
+metadata
